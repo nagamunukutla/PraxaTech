@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PraxaTech — measuring what distance costs</title>
+<meta name="description" content="PraxaTech builds tools that measure what the distance between home and work actually costs. NestGo for people moving countries, Radius for organisations.">
+<meta property="og:title" content="PraxaTech">
+<meta property="og:description" content="The distance between home and work has a price. Almost nobody measures it.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#EDEEF0;
+  --panel:#F7F8F9;
+  --ink:#16202B;
+  --muted:#5B6B7A;
+  --rule:#CFD5DB;
+  --baseline:#8D9EAE;
+  --drag:#DC3E26;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.55;
+  font-variant-numeric:tabular-nums;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px}
+
+/* ---- masthead ---- */
+.mast{padding:38px 0 0}
+.mark{
+  font-size:19px;font-weight:600;letter-spacing:-.015em;
+  display:inline-flex;align-items:baseline;gap:9px;
+}
+.mark .dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--drag);display:inline-block;
+}
+
+/* ---- hero ---- */
+.hero{padding:64px 0 8px}
+h1{
+  font-size:clamp(30px,5.4vw,50px);
+  line-height:1.08;
+  letter-spacing:-.03em;
+  font-weight:600;
+  margin:0;
+  max-width:16ch;
+}
+h1 .second{display:block;color:var(--muted);font-weight:500}
+
+.chart{margin:44px 0 0}
+.chart svg{width:100%;height:auto;display:block}
+.legend{
+  display:flex;flex-wrap:wrap;gap:20px 26px;
+  margin:20px 0 0;font-size:14.5px;color:var(--muted);
+}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:16px;height:9px;display:inline-block;border-radius:1px}
+
+.reading{
+  margin:34px 0 0;padding:22px 24px;
+  background:var(--panel);border-left:2px solid var(--drag);
+  max-width:62ch;
+}
+.reading p{margin:0;font-size:16.5px}
+.reading p + p{margin-top:11px}
+.big{font-weight:600}
+
+/* ---- products ---- */
+.products{padding:78px 0 0}
+.lede{
+  font-size:20px;line-height:1.5;max-width:60ch;
+  margin:0 0 52px;color:var(--ink);
+}
+.product{padding:32px 0;border-top:1px solid var(--rule)}
+.product:last-of-type{border-bottom:1px solid var(--rule)}
+.phead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 12px}
+.phead h2{font-size:23px;font-weight:600;letter-spacing:-.015em;margin:0}
+.who{font-size:15px;color:var(--muted)}
+.product p{margin:0;max-width:64ch;color:var(--ink)}
+.product p + p{margin-top:12px}
+.stage{
+  display:inline-block;margin-top:16px;font-size:14px;
+  color:var(--muted);border:1px solid var(--rule);
+  border-radius:2px;padding:3px 9px;
+}
+
+/* ---- foot ---- */
+footer{padding:64px 0 72px;color:var(--muted);font-size:15.5px}
+footer p{margin:0;max-width:56ch}
+footer p + p{margin-top:10px}
+a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--drag)}
+a:focus-visible{outline:2px solid var(--drag);outline-offset:3px;border-radius:1px}
+
+/* ---- the one motion ---- */
+.bar{transform-origin:0 50%}
+@media (prefers-reduced-motion:no-preference){
+  .bar{animation:grow .5s cubic-bezier(.2,.75,.3,1) backwards}
+  .marker{animation:fade .5s ease 1.15s backwards}
+}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+@media(max-width:620px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .hero{padding:44px 0 8px}
+  .lede{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="mark"><span class="dot" aria-hidden="true"></span>PraxaTech</div>
+  </header>
+
+  <section class="hero">
+    <h1>The distance between home and work has a price.<span class="second">Almost nobody measures it.</span></h1>
+
+    <div class="chart">
+      <svg viewBox="0 0 700 348" role="img" aria-label="Twenty consecutive mornings of the same commute. Every journey shares a 34-minute baseline; the added delay varies from 3 to 51 minutes. The median arrival is 41 minutes, the ninth-worst morning in ten is 63 minutes.">
+        <g font-family="Archivo, sans-serif" font-size="12.5" fill="#5B6B7A">
+          <text x="243" y="16">median 41 min</text>
+          <text x="378" y="16">9 mornings in 10 · 63 min</text>
+        </g>
+        <rect class="marker" x="243" y="24" width="135" height="290" fill="#DC3E26" opacity="0.055"/>
+        <line class="marker" x1="243" y1="24" x2="243" y2="314" stroke="#5B6B7A" stroke-width="1" stroke-dasharray="2 3"/>
+        <line class="marker" x1="378" y1="24" x2="378" y2="314" stroke="#DC3E26" stroke-width="1" stroke-dasharray="2 3"/>
+
+        <g>
+          <g class="bar" style="animation-delay:.00s"><rect x="0" y="30"  width="204" height="8" fill="#8D9EAE"/><rect x="204" y="30"  width="24"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.04s"><rect x="0" y="44"  width="204" height="8" fill="#8D9EAE"/><rect x="204" y="44"  width="42"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.08s"><rect x="0" y="58"  width="204" height="8" fill="#8D9EAE"/><rect x="204" y="58"  width="18"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.12s"><rect x="0" y="72"  width="204" height="8" fill="#8D9EAE"/><rect x="204" y="72"  width="72"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.16s"><rect x="0" y="86"  width="204" height="8" fill="#8D9EAE"/><rect x="204" y="86"  width="36"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.20s"><rect x="0" y="100" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="100" width="228" height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.24s"><rect x="0" y="114" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="114" width="30"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.28s"><rect x="0" y="128" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="128" width="54"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.32s"><rect x="0" y="142" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="142" width="24"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.36s"><rect x="0" y="156" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="156" width="132" height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.40s"><rect x="0" y="170" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="170" width="36"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.44s"><rect x="0" y="184" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="184" width="18"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.48s"><rect x="0" y="198" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="198" width="306" height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.52s"><rect x="0" y="212" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="212" width="48"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.56s"><rect x="0" y="226" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="226" width="30"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.60s"><rect x="0" y="240" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="240" width="84"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.64s"><rect x="0" y="254" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="254" width="24"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.68s"><rect x="0" y="268" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="268" width="42"  height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.72s"><rect x="0" y="282" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="282" width="174" height="8" fill="#DC3E26"/></g>
+          <g class="bar" style="animation-delay:.76s"><rect x="0" y="296" width="204" height="8" fill="#8D9EAE"/><rect x="204" y="296" width="36"  height="8" fill="#DC3E26"/></g>
+        </g>
+
+        <line x1="0" y1="322" x2="510" y2="322" stroke="#CFD5DB" stroke-width="1"/>
+        <g font-family="Archivo, sans-serif" font-size="12.5" fill="#5B6B7A">
+          <text x="0" y="340">one journey, twenty consecutive mornings</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="legend">
+      <span><i style="background:#8D9EAE"></i> travel that was always necessary</span>
+      <span><i style="background:#DC3E26"></i> what the roads added</span>
+    </div>
+
+    <div class="reading">
+      <p>Half of these mornings take 41 minutes or less. One in ten takes 63 minutes or more.</p>
+      <p>So this commuter leaves <span class="big">22 minutes early, every single day</span>, to be on time on nine days out of ten. The margin is spent whether the bad morning arrives or not.</p>
+      <p>Average commute time — the only figure most employers hold — shows none of this.</p>
+    </div>
+  </section>
+
+  <section class="products">
+    <p class="lede">PraxaTech builds tools that put a number on the distance between where people live and where they work. Once, when they move countries. Daily, when they commute.</p>
+
+    <div class="product">
+      <div class="phead">
+        <h2>NestGo</h2>
+        <span class="who">for people moving countries</span>
+      </div>
+      <p>An honest comparison of living here versus living there: cost, tax, healthcare, schooling, and what is actually left at the end of the month. Not a cost-of-living index, but the version that accounts for your circumstances.</p>
+      <p>Then it completes the destination country's visa paperwork from a passport scan — whether the move is for study, work or relocation.</p>
+      <span class="stage">In development</span>
+    </div>
+
+    <div class="product">
+      <div class="phead">
+        <h2>Radius</h2>
+        <span class="who">for organisations</span>
+      </div>
+      <p>An office costs more than its rent. Radius measures the productive hours lost to the commute it creates, weighting unreliability above duration — because a journey that swings by half an hour forces everyone to budget for the worst case, every morning.</p>
+      <p>It turns that into decisions a business can act on: which teams in on which days, whether a satellite site beats a headquarters seat, what staggering start times would actually recover. Aggregated across employers on the same corridor, it becomes something a city can be shown.</p>
+      <p>Built on the Commute Drag Index — an open specification anyone can compute.</p>
+      <span class="stage">In development</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>PraxaTech is being built from Madrid, with an initial focus on the Bengaluru IT corridor.</p>
+    <p><a href="mailto:hello@praxatech.com">hello@praxatech.com</a> · <a href="https://www.linkedin.com/company/praxatech">LinkedIn</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
