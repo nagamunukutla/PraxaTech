@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PraxaTech — measuring what distance costs</title>
+<meta name="description" content="PraxaTech builds tools that measure what the distance between home and work actually costs. NestGo for people moving countries, Radius for organisations.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon-180.png">
+
+<meta property="og:title" content="PraxaTech">
+<meta property="og:description" content="The distance between home and work has a price. Almost nobody measures it.">
+<meta property="og:image" content="og-image-1200x630.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#EDEEF0;
+  --panel:#F7F8F9;
+  --ink:#16202B;
+  --muted:#5B6B7A;
+  --rule:#CFD5DB;
+  --baseline:#8D9EAE;
+  --drag:#DC3E26;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.55;
+  font-variant-numeric:tabular-nums;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px}
+
+.mast{padding:38px 0 0}
+.mark{
+  display:inline-flex;align-items:center;gap:11px;
+  font-size:19px;font-weight:600;letter-spacing:-.015em;
+}
+.mark img{width:22px;height:22px;display:block}
+
+.hero{padding:58px 0 8px}
+h1{
+  font-size:clamp(30px,5.4vw,50px);
+  line-height:1.08;
+  letter-spacing:-.03em;
+  font-weight:600;
+  margin:0;
+  max-width:16ch;
+}
+h1 .second{display:block;color:var(--muted);font-weight:500}
+
+.chart{margin:44px 0 0}
+.chart img{width:100%;height:auto;display:block}
+
+.legend{
+  display:flex;flex-wrap:wrap;gap:20px 26px;
+  margin:20px 0 0;font-size:14.5px;color:var(--muted);
+}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:16px;height:9px;display:inline-block;border-radius:1px}
+
+.reading{
+  margin:34px 0 0;padding:22px 24px;
+  background:var(--panel);border-left:2px solid var(--drag);
+  max-width:62ch;
+}
+.reading p{margin:0;font-size:16.5px}
+.reading p + p{margin-top:11px}
+.big{font-weight:600}
+
+.products{padding:78px 0 0}
+.lede{font-size:20px;line-height:1.5;max-width:60ch;margin:0 0 52px}
+.product{padding:32px 0;border-top:1px solid var(--rule)}
+.product:last-of-type{border-bottom:1px solid var(--rule)}
+.phead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 12px}
+.phead h2{font-size:23px;font-weight:600;letter-spacing:-.015em;margin:0}
+.who{font-size:15px;color:var(--muted)}
+.product p{margin:0;max-width:64ch}
+.product p + p{margin-top:12px}
+.stage{
+  display:inline-block;margin-top:16px;font-size:14px;color:var(--muted);
+  border:1px solid var(--rule);border-radius:2px;padding:3px 9px;
+}
+
+footer{padding:64px 0 72px;color:var(--muted);font-size:15.5px}
+footer p{margin:0;max-width:56ch}
+footer p + p{margin-top:10px}
+a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--drag)}
+a:focus-visible{outline:2px solid var(--drag);outline-offset:3px;border-radius:1px}
+
+@media(max-width:620px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .hero{padding:42px 0 8px}
+  .lede{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="mark"><img src="mark-trans.svg" alt="" width="22" height="22">PraxaTech</div>
+  </header>
+
+  <section class="hero">
+    <h1>The distance between home and work has a price.<span class="second">Almost nobody measures it.</span></h1>
+
+    <div class="chart">
+      <img src="hero-chart.svg"
+           alt="Twenty consecutive mornings of the same commute. Every journey shares a 34-minute baseline; the delay added on top varies from 3 to 51 minutes. The median arrival is 41 minutes; the ninth-worst morning in ten is 63 minutes.">
+    </div>
+
+    <div class="legend">
+      <span><i style="background:#8D9EAE"></i> travel that was always necessary</span>
+      <span><i style="background:#DC3E26"></i> what the roads added</span>
+    </div>
+
+    <div class="reading">
+      <p>Half of these mornings take 41 minutes or less. One in ten takes 63 minutes or more.</p>
+      <p>So this commuter leaves <span class="big">22 minutes early, every single day</span>, to be on time on nine days out of ten. The margin is spent whether the bad morning arrives or not.</p>
+      <p>Average commute time, the only figure most employers hold, shows none of this.</p>
+    </div>
+  </section>
+
+  <section class="products">
+    <p class="lede">PraxaTech builds tools that put a number on the distance between where people live and where they work. Once, when they move countries. Daily, when they commute.</p>
+
+    <div class="product">
+      <div class="phead">
+        <h2>NestGo</h2>
+        <span class="who">for people moving countries</span>
+      </div>
+      <p>An honest comparison of living here versus living there: cost, tax, healthcare, schooling, and what is actually left at the end of the month. Not a cost-of-living index, but the version that accounts for your circumstances.</p>
+      <p>Then it completes the destination country's visa paperwork from a passport scan, whether the move is for study, work or relocation.</p>
+      <span class="stage">In development</span>
+    </div>
+
+    <div class="product">
+      <div class="phead">
+        <h2>Radius</h2>
+        <span class="who">for organisations</span>
+      </div>
+      <p>An office costs more than its rent. Radius measures the productive hours lost to the commute it creates, weighting unreliability above duration, because a journey that swings by half an hour forces everyone to budget for the worst case every morning.</p>
+      <p>It turns that into decisions a business can act on: which teams in on which days, whether a satellite site beats a headquarters seat, what staggering start times would actually recover. Aggregated across employers on the same corridor, it becomes something a city can be shown.</p>
+      <p>Built on the Commute Drag Index, an open specification anyone can compute.</p>
+      <span class="stage">In development</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>PraxaTech is being built from Madrid, with an initial focus on the Bengaluru IT corridor.</p>
+    <p><a href="mailto:hello@praxatech.com">hello@praxatech.com</a> &middot; <a href="https://www.linkedin.com/company/praxatech">LinkedIn</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
